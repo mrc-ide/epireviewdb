@@ -23,8 +23,7 @@ Authors@R: c(
 Description: Contains the latest open access pathogen data from the Pathogen Epidemiology Review Group (PERG). 
 License: MIT + file LICENSE
 Depends:
-    R (>= 3.3.0)
-Imports:
+    R (>= 3.5)
 Suggests:
     knitr,
     lifecycle,
