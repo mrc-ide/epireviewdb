@@ -105,7 +105,8 @@ data_description <- function(data_dictionary) {
     pattern = "\n", replacement = "", x = description_df$description
   )
   out <- merge(
-    data_dictionary, description_df, by = c("tablename", "column_name")
+    data_dictionary, description_df, by = c("tablename", "column_name"),
+    all.x = TRUE
   )
 
   out
