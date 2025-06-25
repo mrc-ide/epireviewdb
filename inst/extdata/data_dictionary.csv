@@ -1,0 +1,4 @@
+tablename,column_name,column_type,ebola,lassa,marburg,sars,description
+articles,covidence_id,double,Yes,Yes,Yes,Yes,ID used in the covidence system. This is used as a primary key
+models,stoch_deter,character,Yes,Yes,Yes,Yes,Whether the model is stochastic or deterministic
+outbreaks,pre_outbreak,character,No,Yes,No,No,Pre outbreak baseline. Valid values are: Disease-free baseline;   Endemic equilibrium; Unspecified

@@ -1,4 +1,3 @@
-
 #' Data on the articles identified and included in the systematic review of
 #' articles related to Ebola virus disease.
 #'
@@ -8,7 +7,7 @@
 #'
 #' @name ebola_articles
 #' @docType data
-#' @inherit marburg_models format
+#' @inherit marburg_articles format
 #' @source Nash, Rebecca K., Bhatia Sangeeta, Morgenstern Christian, Doohan 
 #' Patrick, Jorgensen David, McCain Kelly, McCabe Ruth et al. "Ebola virus disease
 #' mathematical models and epidemiological parameters:a systematic review."
@@ -25,30 +24,7 @@
 #'
 #' @name ebola_models
 #' @docType data
-#' @format data.frame with the following fields:
-#'
-#' - model_data_id = ID variable for the model.
-#' - article_id = ID variable for the article the model came from.
-#' - model_type = whether the model was compartmental, branching process,
-#'      agent/individual based, other, or unspecified.
-#' - compartmental_type = if the model is compartmental, whether the model is
-#'      SIS, SIR, SEIR, or "other".
-#' - stoch_deter = whether the article specified whether the model was
-#'      stochastic, deterministic, or both.
-#' - theoretical_model = "TRUE" or "FALSE". "TRUE" if the model is not fit to
-#'      data.
-#' - interventions_type = interventions modelled e.g. vaccination, quarantine,
-#'      vector control, treatment, contact tracing, hospitals, treatment
-#'      centres, safe burials, behaviour changes, other, or unspecified.
-#' - code_available = whether the code was made available in the article.
-#' - transmission_route = which transmission route was modelled, e.g. airborne
-#'      or close contact, human to human, vector to human, animal to human,
-#'      sexual, or unspecified.
-#' - assumptions = assumptions used in the model e.g. homogenous mixing, latent
-#'      period is the same as incubation period, heterogeneity in transmission
-#'      rates between groups or over time, age dependent susceptibility, or
-#'      unspecified.
-#' - covidence_id = article identifier used by the Imperial team.
+#' @inherit marburg_models format 
 #' @inherit ebola_articles source
 "ebola_models"
 
@@ -61,100 +37,7 @@
 #'
 #' @name ebola_params
 #' @docType data
-#' @format data.frame with the following fields
-#'
-#' - parameter_data_id = ID variable for the parameter.
-#' - article_id = ID variable for the article the outbreak data came from.
-#' - parameter_type = extracted parameter (see ebola_dropdown_parameters
-#'      for the full list of parameters extracted).
-#' - parameter_value = extracted parameter value as stated in the article.
-#' - parameter_unit = units of the extracted parameter (see
-#'      ebola_dropdown_parameters for the full list of parameter units).
-#' - parameter_lower_bound = minimum value of the parameter across any
-#'      dimension of disaggregation.
-#' - parameter_upper_bound = maximum value of the parameter across any
-#'      dimension of disaggregation.
-#' - parameter_value_type = whether the parameter value is the mean, median,
-#'      standard deviation.
-#' - parameter_uncertainty_single_value = extracted uncertainty if only a
-#'      single value provided.
-#' - parameter_uncertainty_single_type = uncertainty type if only a single
-#'      value is reported e.g. "Standard Error (SE)" (see
-#'      ebola_dropdown_parameters for the full list of options).
-#' - parameter_uncertainty_lower_value = lower value of paired uncertainty.
-#' - parameter_uncertainty_upper_value = upper value of paired uncertainty.
-#' - parameter_uncertainty_type = uncertainty type if a pair of values are
-#'      provided, e.g. "CI90%", "CRI95%" (see ebola_dropdown_parameters
-#'      for the full list of options).
-#' - cfr_ifr_numerator = numerator of the cfr or ifr provided in the article.
-#' - cfr_ifr_denominator = denominator of the cfr or ifr provided in the
-#'      article.
-#' - distribution_type = if uncertainty is given as a distribution (see
-#'      ebola_dropdown_parameters for the full list of options).
-#' - distribution_par1_value = value for distribution parameter 1.
-#' - distribution_par1_type = distribution parameter 1 type, e.g. shape, scale
-#'      (see ebola_dropdown_parameters for the full list of options).
-#' - distribution_par1_uncertainty = whether the article reported uncertainty
-#'      for the distribution parameter estimates (TRUE/FALSE).
-#' - distribution_par2_value = value for distribution parameter 2.
-#' - distribution_par2_type = distribution parameter 2 type, e.g. shape, scale
-#'      (see ebola_dropdown_parameters for the full list of options).
-#' - distribution_par2_uncertainty = whether the article reported uncertainty
-#'      for the distribution parameter estimates (TRUE/FALSE).
-#' - method_from_supplement = whether the parameter was taken from the
-#'      supplementary material of the article. TRUE/FALSE.
-#' - method_moment_value = time period, either "Pre outbreak", Start outbreak",
-#'      "Mid outbreak", "Post Outbreak", or "Other", if specified in the article.
-#' - cfr_ifr_method = whether the method used to calculate the cfr/ifr was
-#'      "Naive", "Adjusted", "Unknown".
-#' - method_r = method used to estimate the reproduction number (see
-#'      ebola_dropdown_parameters for the full list of options).
-#' - method_disaggregated_by = how the parameter is disaggregated e.g. by Age,
-#'      Sex, Region.
-#' - method_disaggregated = whether the parameter is disaggregated (TRUE/FALSE).
-#' - method_disaggregated_only = whether only disaggregated data is available
-#'      (TRUE/FALSE).
-#' - riskfactor_outcome = the outcome(s) for which the risk factor was
-#'      evaluated e.g. "Death" or "Infection" (see ebola_dropdown_parameters
-#'      for the full list of options).
-#' - riskfactor_name = the potential risk factor(s) evaluated e.g. "Age" (see
-#'      ebola_dropdown_parameters for the full list of options).
-#' - riskfactor_occupation = specific occupation(s) if occupation is a risk
-#'      factor (see ebola_dropdown_parameters for the full list of options).
-#' - riskfactor_significant = either "Significant", "Not significant",
-#'      "Unspecified" or NA.
-#' - riskfactor_adjusted = either "Adjusted", "Not adjusted", "Unspecified".
-#' - population_sex = the sex of the study population, either "Female", "Male",
-#'      "Both", "Unspecified".
-#' - population_sample_type = how the study was conducted e.g. "Hospital based",
-#'      "Population based" (see 'Setting' in ebola_dropdown_parameters for the
-#'      full list of options).
-#' - population_group = population group e.g. "Healthcare workers" (see
-#'      ebola_dropdown_parameters for the full list of options).
-#' - population_age_min = minimum age in sample (if reported).
-#' - population_age_max = maximum age in the sample (if reported).
-#' - population_sample_size = total number of participants/samples tested.
-#' - population_country = country/countries that the study took place in.
-#' - population_location = location that the study took place e.g. region, city.
-#' - population_study_start_day = day study started (numeric - DD)
-#' - population_study_start_month = month study started (three letter
-#'      abbreviation e.g. "Feb")
-#' - population_study_start_year = year study started (numeric - YYYY)
-#' - population_study_end_day = day study ended (numeric - DD)
-#' - population_study_end_month = month study ended (three letter abbreviation
-#'      e.g. "Feb")
-#' - population_study_end_year = year study ended (numeric - YYYY)
-#' - genome_site = the portion of the pathogen’s genome used to estimate any
-#'      extracted parameters. I.e. the gene, gene segment, codon position, or a
-#'      more generic description (‘whole genome’ or ‘intergenic positions’).
-#' - genomic_sequence_available = whether the study sequenced new pathogen
-#'      isolates and their accession numbers have been provided for retrieval
-#'      from a public database. TRUE/FALSE.
-#' - parameter_class = class of the extracted parameter. Either "Human delay",
-#'      "Seroprevalence", "Severity", "Reproduction number", "Mutations",
-#'      "Risk factors", or "Other transmission parameters".
-#' - covidence_id = article identifier used by the Imperial team.
-#'
+#' @inherit marburg_params format
 #' @inherit ebola_articles source
 "ebola_params"
 

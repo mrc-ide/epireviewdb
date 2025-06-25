@@ -112,6 +112,7 @@ marburg_params
 }
 \description{
 This data set provides all extracted parameters for Marburg virus disease
-(MVD).
+(MVD). Note that a complete and updated data-dictionary is available with
+the package.
 }
 \keyword{datasets}

@@ -1,0 +1,23 @@
+---
+title: "Data dictionary"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{data dictionary}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+```
+
+```{r setup}
+library(DT)
+library(epireviewdb)
+```
+
+```{r}
+dict_path <- system.file("extdata", "data_dictionary.csv", package = "epireviewdb")
+data_dict <- read.csv(dict_path, stringsAsFactors = FALSE)
+DT::datatable(data_dict, filter = "top", options = list(pageLength = 10))
+```
